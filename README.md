@@ -24,7 +24,7 @@ It allows users to:
 ---
 
 ## 📁 Project Structure
-'''
+```
 src/
 ├── LibrarySystem/
 │ ├── Book.java
@@ -38,7 +38,7 @@ src/
 ├── LibrarySystem.utils/
 │ ├── FileHandler.java
 │ └── InputHelper.java
-'''
+```
 
 ---
 
