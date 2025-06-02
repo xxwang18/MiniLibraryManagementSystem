@@ -1,12 +1,12 @@
 package LibrarySystem.exceptions;
 
-public class BookNotAvaliableException extends Exception {
+public class BookNotAvailableException extends Exception {
  /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-public BookNotAvaliableException(String message) {
+public BookNotAvailableException(String message) {
 	 super(message);
  }
 }

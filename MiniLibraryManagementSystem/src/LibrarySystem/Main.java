@@ -1,7 +1,7 @@
 package LibrarySystem;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		Book book1 = new Book("1984", "George Orwell", "9780451524935", 3);
 		System.out.println(book1.toString());
 		
@@ -12,7 +12,7 @@ public class Main {
 		RegularBook rbook =new RegularBook("1984", "George Orwell", "9780451524935", 3);
 		System.out.println("Now you borrowed one book");
 		rbook.borrow();
-		System.out.println("The rest number of the book: "+rbook.getTitle()+"is " +rbook.getQuantity());
+		System.out.println("The rest number of the book: "+rbook.getTitle()+" is " +rbook.getQuantity());
 		//Reference book, not borrowable
 		ReferenceBook rfbook = new ReferenceBook("Romance of three kingdoms","Luo,Guanzhong","8939282");
 		System.out.println(rfbook.toString());
@@ -30,6 +30,11 @@ public class Main {
         
         library.showAllBooks();
         library.showAllUsers();
+        
+        library.borrowBook(xiong.getUserId(),rbook.getIsbn());
+
+        System.out.println("The quantity of book: "+rbook.getQuantity());
+        System.out.println(rbook.isAvaliable());
 	}
 
 }

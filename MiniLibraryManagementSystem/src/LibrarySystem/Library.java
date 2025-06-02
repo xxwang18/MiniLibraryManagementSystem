@@ -2,6 +2,8 @@ package LibrarySystem;
 import java.util.ArrayList;
 import java.util.List;
 
+import LibrarySystem.exceptions.BookNotAvailableException;
+
 public class Library {
 //attributes
 	private List<Book> books;
@@ -52,7 +54,7 @@ public class Library {
 	
 //Borrow and return books
 	
-	public void borrowBook(String UserId, String isbn) {
+	public void borrowBook(String UserId, String isbn) throws BookNotAvailableException {
 		User user = findUserById(UserId);
 		Book book = findBookByISBN(isbn);
 		if (user == null || book == null) {
@@ -63,8 +65,7 @@ public class Library {
 			RegularBook rb = (RegularBook) book;
 			
 			if(!rb.isAvaliable()) {
-				System.out.println("Book is not avaliable");
-				return;
+				throw new BookNotAvailableException("This book is not available.");
 			}
 			user.borrowBook(book);
 			rb.borrow();
