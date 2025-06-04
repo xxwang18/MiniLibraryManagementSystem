@@ -48,7 +48,7 @@ src/
 - Interface + inheritance
 - Custom exceptions
 - Input handling
-- (Optional) File save/load via `FileHandler`
+- File save/load via `FileHandler`
 
 ---
 
